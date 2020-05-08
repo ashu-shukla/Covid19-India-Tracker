@@ -14,6 +14,6 @@ app.get('/',function(req,res){
         }
     });
 });
-app.listen(process.env.PORT,process.env.IP,function(){
+app.listen(8080,process.env.IP,function(){
     console.log("Tracker Server online!");
 });

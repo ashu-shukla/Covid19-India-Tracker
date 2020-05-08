@@ -2,10 +2,10 @@
   <section id="banner">
       <div class="container mx-auto align-items-center justify-content-between">
           <div class="row">
-              <div class="col-12 col-lg-5 order-lg-last">
-                <img src="/images/header-b.png" alt="" srcset="" class="img-fluid">
+              <div data-aos="zoom-out" class="col-12 col-lg-7 order-lg-last">
+                <img src="/images/ban.png" alt="" srcset="" class="img-fluid">
               </div>
-              <div id="bcol" class="col-12 col-lg-7 my-auto">
+              <div id="bcol" class="col-12 col-lg-5 my-auto">
                   <div class="spa">
                     <span id="corona">Coronavirus</span>
                     <span class="badge-danger">COVID-19</span>
@@ -24,27 +24,31 @@
     <div class="container mx-auto align-items-center justify-content-center">
         <div class="row no-gutters">
             <div class="col-6 col-md-3">
-                <div class="player mx-auto">
+                <div data-aos="zoom-in-up" data-aos-mirror="true" class="player mx-auto">
                     <span id="total">CONFIRMED</span>
                     <h1><%= data.statewise[0].confirmed %></h1>
+                    <p id="delta-con">[+<%= data.statewise[0].deltaconfirmed %>]</p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
-                <div class="player mx-auto">
+                <div data-aos="zoom-in-up" data-aos-mirror="true" class="player mx-auto">
                     <span id="active">ACTIVE</span>
                     <h1><%= data.statewise[0].active %></h1>
+                    <p id="delta-rec">&nbsp;</p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
-                <div class="player mx-auto">
+                <div data-aos="zoom-in-up" data-aos-mirror="true" class="player mx-auto">
                     <span id="recover">RECOVERED</span>
                     <h1><%= data.statewise[0].recovered %></h1>
+                    <p id="delta-rec">[+<%= data.statewise[0].deltarecovered %>]</p>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
+            <div data-aos="zoom-in-up" data-aos-mirror="true" class="col-6 col-md-3">
                 <div class="player mx-auto">
-                    <span id="deth">DEATHS</span>
+                    <span id="deth">DECEASED</span>
                     <h1><%= data.statewise[0].deaths %></h1>
+                    <p id="delta-dsc">[+<%= data.statewise[0].deaths %>]</p>
                 </div>
             </div>
         </div>
@@ -56,7 +60,7 @@
             <h2>Statewise Tracker</h2>
             <p id="info">Compiled from State Govt. numbers as published by MoHFW</p>
         </div>
-          <table class="plate mx-auto" align="center">
+          <table data-aos="zoom-in-up"class="plate mx-auto" align="center">
               <tr>
                   <th>State/UT</th>
                   <th class="text-center" id="total"><span id="confirm">CONFIRMED</span><span id="con">Cnfrm</span></th>
@@ -68,10 +72,10 @@
                <% var state = data.statewise[i]; %>
                 <tr>
                     <td id="state"><%= state.state %></td>
-                    <td class="text-center"><%= state.confirmed %></td>
+                    <td class="text-center"><span id="state-delta-con"><i class="fas fa-angle-up"></i> <%= state.deltaconfirmed %></span> <%= state.confirmed %></td>
                     <td class="text-center"><%= state.active %></td>
-                    <td class="text-center"><%= state.recovered %></td>
-                    <td class="text-center"><%= state.deaths %></td>
+                    <td class="text-center"><span id="state-delta-rec"><i class="fas fa-angle-up"></i> <%= state.deltarecovered %></span> <%= state.recovered %></td>
+                    <td class="text-center"><span id="state-delta-dsc"><i class="fas fa-angle-up"></i> <%= state.deltadeaths %></span> <%= state.deaths %></td>
                 </tr>
               <% } %>
           </table>
@@ -79,7 +83,7 @@
   </section>
   <section id="about">
       <div class="container text-center mt-4">
-          <div>
+          <div data-aos="zoom-in-up">
             <a href="https://api.covid19india.org/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-database"></i></i> CROWDSOURCED PATIENT DATABASE</button></a>
           </div>
           <a href="https://www.facebook.com/ashutoshshukla8"><i class="fab fa-facebook"></i></a>
