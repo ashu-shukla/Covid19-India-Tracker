@@ -5,19 +5,20 @@
               <div class="col-12 col-lg-5 order-lg-last">
                 <img src="/images/header-b.png" alt="" srcset="" class="img-fluid">
               </div>
-              <div class="col-12 col-lg-7 my-auto mt-2">
-                  <span id="corona mt-2">Coronavirus</span>
-                  <span class="badge-danger mt-2">COVID-19</span>
+              <div id="bcol" class="col-12 col-lg-7 my-auto">
+                  <div class="spa">
+                    <span id="corona">Coronavirus</span>
+                    <span class="badge-danger">COVID-19</span>
+                  </div>
                   <h1>INDIA-Live Tracker</h1>
                   <h2>Stay at home, Stay Safe</h2>
                   <p>The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus. Protect yourself and others from infection by washing your hands at-least 20sec and not touching your face.</p>
               </div>
           </div>
           <div class="text-center">
-            <p id="info"><span><%= data.statewise[0].lastupdatedtime %> IST</sapn></p>
-        </div>
+            <p id="info"><span><%= data.statewise[0].lastupdatedtime %> IST <i id="corona" class="far fa-bell"></i></sapn></p>
           </div>
-      </div>
+        </div>
   </section>
   <section id="totalcases">
     <div class="container mx-auto align-items-center justify-content-center">

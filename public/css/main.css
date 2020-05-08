@@ -18,6 +18,9 @@ a{
 a:hover{
     color: rgb(202, 68, 68);
 }
+#bcol{
+    padding-top: 15px;
+}
 #about{
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -40,13 +43,14 @@ a:hover{
 }
 #corona{
     color: rgb(202, 68, 68);
-    margin-bottom: 3px;
 }
 
 .badge-danger{
     border-radius: 3px;
     padding: 3px;
-    margin-bottom: 3px;
+}
+.spa{
+    padding: 3px;
 }
 .plate{
     background:rgb(255, 255, 255);
