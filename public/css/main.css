@@ -1,0 +1,139 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    position: relative; 
+    color: rgb(17, 17, 17);
+    background-color: rgb(255, 255, 255);
+    margin-top: 2rem;
+}
+h1{
+    font-weight: 700;
+}h2{
+    font-weight: 600;
+}
+a{
+    color: rgb(17, 17, 17);
+    margin: .5rem;
+    font-size: 2rem;
+}
+a:hover{
+    color: rgb(202, 68, 68);
+}
+#about{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+#deth{
+    color: rgb(122, 121, 121);
+}
+#recover{
+    color: rgb(106, 224, 126);
+}
+#active{
+    color: rgb(20, 208, 233);
+}
+#total{
+    color: rgb(202, 68, 68);
+}
+#info{
+    color: lightslategray;
+    font-size: .8rem;
+}
+#corona{
+    color: rgb(202, 68, 68);
+    margin-bottom: 3px;
+}
+
+.badge-danger{
+    border-radius: 3px;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+.plate{
+    background:rgb(255, 255, 255);
+    box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32);
+    border-radius: 15px;
+    justify-content: center;
+}
+.player {
+    background:rgb(255, 255, 255);
+    width: 14rem;
+    min-height: 11.25rem;
+    box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32);
+    border-radius: 15px;
+    padding: 11px;
+    margin: .6rem;
+}
+
+  table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    
+}
+ td {
+    border: 0px solid white;
+    background-color: rgba(50, 88, 130, 0.32);
+    border-radius: 10px;
+    -moz-border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    word-wrap: break-word;
+}
+@media only screen and (min-width: 320px) {
+    .player {
+        width: 10rem;
+        min-height: 5rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    table{
+        width: 100%;
+        font-size: .9rem;
+    }
+    #state{
+        max-width: 7rem;
+    }
+    #confirm{
+        visibility: hidden;
+        display: none;
+    }
+    .plate{
+        margin-left: -.3rem;
+    }
+    #crowd{
+        max-width: 19rem;
+        font-size: .8rem;
+    }
+
+  }
+  @media only screen and (min-width: 768px) {
+    .player {
+        width: 10rem;
+        min-height: 5rem;
+    }
+    h1{
+        font-size: 2.6rem;
+    }
+    #con{
+        visibility: hidden;
+        display: none;
+    }
+    #confirm{
+        visibility: visible;
+        display: inline;
+    }
+
+  }
+  @media only screen and (min-width: 992px) {
+    .player {
+        width: 14rem;
+        min-height: 5rem;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    table{
+        width: 80%;
+        font-size: 1rem;
+    }
+  }

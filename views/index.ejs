@@ -1,0 +1,89 @@
+<%- include('partials/header') %>
+  <section id="banner">
+      <div class="container mx-auto align-items-center justify-content-between">
+          <div class="row">
+              <div class="col-12 col-lg-5 order-lg-last">
+                <img src="/images/header-b.png" alt="" srcset="" class="img-fluid">
+              </div>
+              <div class="col-12 col-lg-7 my-auto">
+                  <span id="corona">Coronavirus</span>
+                  <span class="badge-danger">COVID-19</span>
+                  <h1>INDIA-Live Tracker</h1>
+                  <h2>Stay at home, Stay Safe</h2>
+                  <p>The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus. Protect yourself and others from infection by washing your hands at-least 20sec and not touching your face.</p>
+              </div>
+          </div>
+          <div class="text-center">
+            <p id="info"><span><%= data.statewise[0].lastupdatedtime %> IST</sapn></p>
+        </div>
+          </div>
+      </div>
+  </section>
+  <section id="totalcases">
+    <div class="container mx-auto align-items-center justify-content-center">
+        <div class="row no-gutters">
+            <div class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="total">CONFIRMED</span>
+                    <h1><%= data.statewise[0].confirmed %></h1>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="active">ACTIVE</span>
+                    <h1><%= data.statewise[0].active %></h1>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="recover">RECOVERED</span>
+                    <h1><%= data.statewise[0].recovered %></h1>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="deth">DEATHS</span>
+                    <h1><%= data.statewise[0].deaths %></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="states">
+      <div class="container justify-content-center mt-2">
+        <div class="text-center">
+            <h2>Statewise Tracker</h2>
+            <p id="info">Compiled from State Govt. numbers as published by MoHFW</p>
+        </div>
+          <table class="plate mx-auto" align="center">
+              <tr>
+                  <th>State/UT</th>
+                  <th class="text-center" id="total"><span id="confirm">CONFIRMED</span><span id="con">Cnfrm</span></th>
+                  <th class="text-center" id="active"><span id="confirm">ACTIVE</span><span id="con">Actv</span></th>
+                  <th class="text-center" id="recover"><span id="confirm">RECOVERED</span><span id="con">Rec</span></th>
+                  <th class="text-center" id="deth"><span id="confirm">DECEASED</span><span id="con">Dcs</span></th>
+              </tr>
+              <% for(var i = 1 ; i < data.statewise.length; i++){ %>
+               <% var state = data.statewise[i]; %>
+                <tr>
+                    <td id="state"><%= state.state %></td>
+                    <td class="text-center"><%= state.confirmed %></td>
+                    <td class="text-center"><%= state.active %></td>
+                    <td class="text-center"><%= state.recovered %></td>
+                    <td class="text-center"><%= state.deaths %></td>
+                </tr>
+              <% } %>
+          </table>
+      </div>
+  </section>
+  <section id="about">
+      <div class="container text-center mt-4">
+          <div>
+            <a href="https://api.covid19india.org/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-database"></i></i> CROWDSOURCED PATIENT DATABASE</button></a>
+          </div>
+          <a href="https://www.facebook.com/ashutoshshukla8"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/ashutoshshukla__/"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/ashu_shukla_"><i class="fab fa-twitter"></i></a>
+      </div>
+  </section>
+<%- include('partials/footer') %>
