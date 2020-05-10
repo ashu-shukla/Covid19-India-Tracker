@@ -11,14 +11,18 @@ h1{
     font-weight: 600;
 }
 a{
+    text-decoration: none;
     color: rgb(17, 17, 17);
-    margin: .5rem;
-    font-size: 2rem;
+    display: block;
 }
 a:hover{
-    color: rgb(202, 68, 68);
+    text-decoration: none;
+    color: rgb(17, 17, 17);
 }
-
+#sbg{
+    box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32);
+    border-radius: 15px;
+}
 #bcol{
     padding-top: 15px;
 }
@@ -75,6 +79,11 @@ a:hover{
     border-radius: 3px;
     padding: 3px;
 }
+.ftco{
+    color: rgb(17, 17, 17);
+    margin: .5rem;
+    font-size: 2rem;
+}
 .spa{
     padding: 3px;
 }
@@ -109,12 +118,15 @@ a:hover{
     word-wrap: break-word;
     font-weight: 600;
 }
+tr:hover {
+    background-color: rgb(95, 95, 95); 
+}
 @media only screen and (min-width: 320px) {
     .player {
         width: 10rem;
         min-height: 5rem;
     }
-    h1{
+    #head{
         font-size: 2rem;
     }
     table{
@@ -142,7 +154,7 @@ a:hover{
         width: 10rem;
         min-height: 5rem;
     }
-    h1{
+    #head{
         font-size: 2.6rem;
     }
     #con{
@@ -160,7 +172,7 @@ a:hover{
         width: 14rem;
         min-height: 5rem;
     }
-    h1{
+    #head{
         font-size: 4rem;
     }
     table{

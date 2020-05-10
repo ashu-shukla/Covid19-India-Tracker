@@ -14,6 +14,21 @@ app.get('/',function(req,res){
         }
     });
 });
+
+app.get('/state/:state',function(req,res){
+    var state=req.params.state;
+    console.log(state);
+    var url='https://api.covid19india.org/v2/state_district_wise.json';
+    request(url,function(error,response,body){
+        if(!error&&response.statusCode==200){
+            var parsedData=JSON.parse(body);
+            // console.log(parsedData);
+            res.render('state',{data: parsedData, selectedstate: state});
+            console.log('State Displayed!');
+        }
+    });
+});
+
 app.listen(process.env.PORT,process.env.IP,function(){
     console.log("Tracker Server online!");
 });

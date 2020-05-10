@@ -1,0 +1,109 @@
+<%- include('partials/header') %>
+  <section id="banner">
+      <div class="container mx-auto align-items-center justify-content-between">
+              <div data-aos="zoom-out">
+                <img id="sbg"src="https://images.unsplash.com/photo-1588615419942-9f1d6b4f04fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2104&q=80"  alt="" srcset="" class="img-fluid">
+              </div>
+              <div id="bcol" class="my-auto">
+                  <h1><%= selectedstate %></h1>
+                  <h5>COVID-19 is a new illness that can affect your lungs andairways.</h5>
+                  <p>It's caused by a virus called coronavirus. It was discovered in December 2019 in Wuhan, Hubei, China.</p>
+                   <p>Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and breathing difficulties.</p>
+                    <p>In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome, kidney failure and even death.</p>
+              </div>
+          </div>
+        </div>
+  </section>
+<section id="totalcases">
+    <div class="container mx-auto align-items-center justify-content-center">
+        <% for(var i = 0 ; i < data.length; i++){ %>
+        <%  if(data[i].state==selectedstate){ %>
+            <% var dist= data[i].districtData %>
+            <% var num= dist.length %>
+            <% var scon = 0,sact=0,sdsc=0,srec=0,dcon=0,ddsc=0,drec=0; %>
+            <% for(var  j = 0 ; j< num; j++){ %>
+                <% scon += dist[j].confirmed %>
+                <% dcon += dist[j].delta.confirmed %>
+                <% srec += dist[j].recovered %>
+                <% drec += dist[j].delta.recovered %>
+                <% sdsc += dist[j].deceased %>
+                <% ddsc += dist[j].delta.deceased %>
+                <% sact += dist[j].active %>
+                <% } %>
+        <div class="row no-gutters">
+            <div data-aos="zoom-in-up" class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="total">CONFIRMED</span>
+                    <h1><%= scon %></h1>
+                    <p id="delta-con">[+<%= dcon %>]</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="active">ACTIVE</span>
+                    <h1><%= sact %></h1>
+                    <p id="delta-rec">&nbsp;</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="recover">RECOVERED</span>
+                    <h1><%= srec %></h1>
+                    <p id="delta-rec">[+<%= drec %>]</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" class="col-6 col-md-3">
+                <div class="player mx-auto">
+                    <span id="deth">DECEASED</span>
+                    <h1><%= sdsc %></h1>
+                    <p id="delta-dsc">[+<%= ddsc %>]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="states">
+      <div class="container justify-content-center mt-2">
+        <div class="text-center">
+            <h2>Districtwise Tracker</h2>
+            <p id="info">Compiled from State Govt. numbers as published by MoHFW</p>
+        </div>
+          <table data-aos="zoom-in-up" class="plate mx-auto" align="center">
+              <tr>
+                  <th>District</th>
+                  <th class="text-center" id="total"><span id="confirm">CONFIRMED</span><span id="con">Cnfrm</span></th>
+                  <th class="text-center" id="active"><span id="confirm">ACTIVE</span><span id="con">Actv</span></th>
+                  <th class="text-center" id="recover"><span id="confirm">RECOVERED</span><span id="con">Rec</span></th>
+                  <th class="text-center" id="deth"><span id="confirm">DECEASED</span><span id="con">Dcs</span></th>
+              </tr>
+              <% var dist= data[i].districtData %>
+              <% var num= dist.length %>
+              <% for(var  j = 0 ; j< num; j++){ %>
+                <tr>
+                    <td><%= dist[j].district %></td>
+                    <td class="text-center"><span id="state-delta-con"><i class="fas fa-angle-up"></i> <%= dist[j].delta.confirmed %></span> <%= dist[j].confirmed %></td>
+                    <td class="text-center"><%= dist[j].active %></td>
+                    <td class="text-center"><span id="state-delta-rec"><i class="fas fa-angle-up"></i> <%= dist[j].delta.recovered %></span> <%= dist[j].recovered %></td>
+                    <td class="text-center"><span id="state-delta-dsc"><i class="fas fa-angle-up"></i> <%= dist[j].delta.deceased %></span> <%= dist[j].deceased %></td>
+                </tr>
+             <% } %>
+                
+          </table>
+      </div>
+      <% } %>
+      <% } %>
+  </section>
+  <section id="about">
+    <div class="text-center mt-4" data-aos="zoom-in-up">
+        <a class="ftco" href="/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-caret-left"></i></i> Go Back!</button></a>
+      </div>
+      <div class="container text-center mt-4">
+          <div data-aos="zoom-in-up">
+            <a class="ftco" href="https://api.covid19india.org/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-database"></i></i> CROWDSOURCED PATIENT DATABASE</button></a>
+          </div>
+          <a class="ftco" href="https://www.facebook.com/ashutoshshukla8"><i class="fab fa-facebook"></i></a>
+          <a class="ftco" href="https://www.instagram.com/ashutoshshukla__/"><i class="fab fa-instagram"></i></a>
+          <a class="ftco" href="https://twitter.com/ashu_shukla_"><i class="fab fa-twitter"></i></a>
+      </div>
+  </section>
+  <%- include('partials/footer') %>

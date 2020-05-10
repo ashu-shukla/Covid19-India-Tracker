@@ -10,7 +10,7 @@
                     <span id="corona">Coronavirus</span>
                     <span class="badge-danger">COVID-19</span>
                   </div>
-                  <h1>INDIA-Live Tracker</h1>
+                  <h1 id="head">INDIA-Live Tracker</h1>
                   <h2>Stay at home, Stay Safe</h2>
                   <p>The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus. Protect yourself and others from infection by washing your hands at-least 20sec and not touching your face.</p>
               </div>
@@ -71,11 +71,11 @@
               <% for(var i = 1 ; i < data.statewise.length; i++){ %>
                <% var state = data.statewise[i]; %>
                 <tr>
-                    <td id="state"><%= state.state %></td>
-                    <td class="text-center"><span id="state-delta-con"><i class="fas fa-angle-up"></i> <%= state.deltaconfirmed %></span> <%= state.confirmed %></td>
-                    <td class="text-center"><%= state.active %></td>
-                    <td class="text-center"><span id="state-delta-rec"><i class="fas fa-angle-up"></i> <%= state.deltarecovered %></span> <%= state.recovered %></td>
-                    <td class="text-center"><span id="state-delta-dsc"><i class="fas fa-angle-up"></i> <%= state.deltadeaths %></span> <%= state.deaths %></td>
+                    <td id="state"><a href="/state/<%= state.state %>"><%= state.state %></a></td>
+                    <td class="text-center"><a href="/state/<%= state.state %>"><span id="state-delta-con"><i class="fas fa-angle-up"></i> <%= state.deltaconfirmed %></span> <%= state.confirmed %></a></td>
+                    <td class="text-center"><a href="/state/<%= state.state %>"><%= state.active %></a></td>
+                    <td class="text-center"><a href="/state/<%= state.state %>"><span id="state-delta-rec"><i class="fas fa-angle-up"></i> <%= state.deltarecovered %></span> <%= state.recovered %></a></td>
+                    <td class="text-center"><a href="/state/<%= state.state %>"><span id="state-delta-dsc"><i class="fas fa-angle-up"></i> <%= state.deltadeaths %></span> <%= state.deaths %></a></td>
                 </tr>
               <% } %>
           </table>
@@ -84,11 +84,11 @@
   <section id="about">
       <div class="container text-center mt-4">
           <div data-aos="zoom-in-up">
-            <a href="https://api.covid19india.org/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-database"></i></i> CROWDSOURCED PATIENT DATABASE</button></a>
+            <a class="ftco" href="https://api.covid19india.org/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-database"></i></i> CROWDSOURCED PATIENT DATABASE</button></a>
           </div>
-          <a href="https://www.facebook.com/ashutoshshukla8"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/ashutoshshukla__/"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/ashu_shukla_"><i class="fab fa-twitter"></i></a>
+          <a class="ftco" href="https://www.facebook.com/ashutoshshukla8"><i class="fab fa-facebook"></i></a>
+          <a class="ftco" href="https://www.instagram.com/ashutoshshukla__/"><i class="fab fa-instagram"></i></a>
+          <a class="ftco" href="https://twitter.com/ashu_shukla_"><i class="fab fa-twitter"></i></a>
       </div>
   </section>
 <%- include('partials/footer') %>
