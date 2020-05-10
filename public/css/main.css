@@ -83,6 +83,7 @@ a:hover{
     color: rgb(17, 17, 17);
     margin: .5rem;
     font-size: 2rem;
+    display: inline;
 }
 .spa{
     padding: 3px;
