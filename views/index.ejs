@@ -3,7 +3,7 @@
       <div class="container mx-auto align-items-center justify-content-between">
           <div class="row">
               <div data-aos="zoom-out" class="col-12 col-lg-7 order-lg-last">
-                <img src="/images/ban.png" alt="" srcset="" class="img-fluid">
+                <img src="/images/fightcovid.png" alt="" srcset="" class="img-fluid">
               </div>
               <div id="bcol" class="col-12 col-lg-5 my-auto">
                   <div class="spa">
@@ -71,7 +71,11 @@
               <% for(var i = 1 ; i < data.statewise.length; i++){ %>
                <% var state = data.statewise[i]; %>
                 <tr>
-                    <td id="state"><a href="/state/<%= state.state %>"><%= state.state %></a></td>
+                    <% if(state.state=='State Unassigned'){ %>
+                        <td id="state"><a href="/state/<%= state.state %>">These cases are being reassigned to states by MoHfW</a></td>
+                    <% }else{ %>
+                        <td id="state"><a href="/state/<%= state.state %>"><%= state.state %></a></td>
+                    <% } %>
                     <td class="text-center"><a href="/state/<%= state.state %>"><span id="state-delta-con"><i class="fas fa-angle-up"></i> <%= state.deltaconfirmed %></span> <%= state.confirmed %></a></td>
                     <td class="text-center"><a href="/state/<%= state.state %>"><%= state.active %></a></td>
                     <td class="text-center"><a href="/state/<%= state.state %>"><span id="state-delta-rec"><i class="fas fa-angle-up"></i> <%= state.deltarecovered %></span> <%= state.recovered %></a></td>
