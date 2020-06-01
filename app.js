@@ -2,9 +2,9 @@ const express=require('express');
 const request=require('request');
 const compression = require('compression')
 const app=express();
-app.set('view engine','ejs');
+app.use(compression());
 
-app.use(compression()); //use compression 
+app.set('view engine','ejs');
 app.use(express.static("public"));
 
 app.get('/',function(req,res){
@@ -31,6 +31,6 @@ app.get('/state/:state',function(req,res){
     });
 });
 
-app.listen(process.env.PORT,process.env.IP,function(){
+app.listen(2020,process.env.IP,function(){
     console.log("Tracker Server online!");
 });
