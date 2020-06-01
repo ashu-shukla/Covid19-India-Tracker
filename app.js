@@ -31,6 +31,6 @@ app.get('/state/:state',function(req,res){
     });
 });
 
-app.listen(8080,process.env.IP,function(){
+app.listen(process.env.PORT,process.env.IP,function(){
     console.log("Tracker Server online!");
 });
