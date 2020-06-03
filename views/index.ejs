@@ -1,4 +1,20 @@
 <%- include('partials/header') %>
+<% let x= data.statewise; %>
+<% for(let i = 0; i < x.length ; i++){ %>
+    <% let st = x[i] ; %>
+        <%   for (let property in st) { %>
+            <% if(property=='active' || property=='confirmed' || property=='deaths' || property=='recovered'){ %>
+                <% var change = st[property]; %>
+                <% var lastThree = change.substring(change.length-3); %>
+                <% var otherNumbers = change.substring(0,change.length-3); %>
+                <% if(otherNumbers != ''){ %>
+                    <% lastThree = ',' + lastThree; %>
+                    <% } %>
+                <% st[property] = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;  %> 
+            <% } %>
+        <% } %>
+    <% } %>
+
   <section id="banner">
       <div class="container mx-auto align-items-center justify-content-between">
           <div class="row">

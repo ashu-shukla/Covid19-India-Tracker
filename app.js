@@ -30,7 +30,7 @@ app.get('/state/:state',function(req,res){
         }
     });
 });
-
-app.listen(process.env.PORT,process.env.IP,function(){
+let PORT = process.env.PORT || 3000;
+app.listen(PORT,process.env.IP,function(){
     console.log("Tracker Server online!");
 });
