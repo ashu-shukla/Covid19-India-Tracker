@@ -103,7 +103,7 @@ a:hover{
     box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32);
     border-radius: 15px;
     padding: 11px;
-    margin: .6rem;
+    margin: .5rem;
 }
 
   table {
@@ -126,7 +126,7 @@ tr:hover {
 }
 @media only screen and (min-width: 320px) {
     .player {
-        width: 10rem;
+        width: 9.7rem;
         min-height: 5rem;
     }
     #head{
@@ -134,7 +134,7 @@ tr:hover {
     }
     table{
         width: 100%;
-        font-size: .9rem;
+        font-size: .75rem;
     }
     #state{
         max-width: 7rem;
