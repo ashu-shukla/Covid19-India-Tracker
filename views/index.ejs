@@ -18,7 +18,7 @@
   <section id="banner">
       <div class="container mx-auto align-items-center justify-content-between">
           <div class="row">
-              <div data-aos="zoom-out" class="col-12 col-lg-7 order-lg-last">
+              <div data-aos="zoom-out" class="headimg  col-lg-7 order-lg-last">
                 <img src="/images/covidfight.png" alt="fight covid" class="img-fluid">
               </div>
               <div id="bcol" class="col-12 col-lg-5 my-auto">
@@ -27,8 +27,9 @@
                     <span class="badge-danger">COVID-19</span>
                   </div>
                   <h1 id="head">INDIA-Live Tracker</h1>
-                  <h2>Stay at home, Stay Safe</h2>
-                  <p>The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus. Protect yourself and others from infection by washing your hands at-least 20sec and not touching your face.</p>
+                  <h2>State and District Data</h2>
+                  <p>Outbreak of coronavirus in India: Latest Case Count of Covid19.</p>
+                  <p>A crowdsourced effort to track the coronavirus in India. A detailed information about coronavirus in India In the form of tables of the number of cases by state and district.</p>
               </div>
           </div>
           <div class="text-center">
@@ -39,32 +40,40 @@
   <section id="totalcases">
     <div class="container mx-auto align-items-center justify-content-center">
         <div class="row no-gutters">
-            <div class="col-6 col-md-3">
-                <div data-aos="zoom-in-up" data-aos-mirror="true" class="player mx-auto">
-                    <span id="total">CONFIRMED</span>
-                    <h1><%= data.statewise[0].confirmed %></h1>
-                    <p id="delta-con">[+<%= data.statewise[0].deltaconfirmed %>]</p>
+            <div class="col-12 col-md-3">
+                <div class="cardbk cardcon mx-auto">
+                    <div data-aos="zoom-in-up" data-aos-mirror="true" class="player">
+                        <span id="total">CONFIRMED</span>
+                        <h1><%= data.statewise[0].confirmed %></h1>
+                        <p id="delta-con">[+<%= data.statewise[0].deltaconfirmed %>]</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="cardbk cardact mx-auto">
+                    <div data-aos="zoom-in-up" data-aos-mirror="true" class="player">
+                        <span id="active">ACTIVE</span>
+                        <h1><%= data.statewise[0].active %></h1>
+                        <p id="delta-rec">&nbsp;</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
-                <div data-aos="zoom-in-up" data-aos-mirror="true" class="player mx-auto">
-                    <span id="active">ACTIVE</span>
-                    <h1><%= data.statewise[0].active %></h1>
-                    <p id="delta-rec">&nbsp;</p>
+            <div class="col-12 col-md-3">
+                <div class="cardbk cardrec mx-auto">
+                    <div data-aos="zoom-in-up" data-aos-mirror="true" class="player">
+                        <span id="recover">RECOVERED</span>
+                        <h1><%= data.statewise[0].recovered %></h1>
+                        <p id="delta-rec">[+<%= data.statewise[0].deltarecovered %>]</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
-                <div data-aos="zoom-in-up" data-aos-mirror="true" class="player mx-auto">
-                    <span id="recover">RECOVERED</span>
-                    <h1><%= data.statewise[0].recovered %></h1>
-                    <p id="delta-rec">[+<%= data.statewise[0].deltarecovered %>]</p>
-                </div>
-            </div>
-            <div data-aos="zoom-in-up" data-aos-mirror="true" class="col-6 col-md-3">
-                <div class="player mx-auto">
-                    <span id="deth">DECEASED</span>
-                    <h1><%= data.statewise[0].deaths %></h1>
-                    <p id="delta-dsc">[+<%= data.statewise[0].deltadeaths %>]</p>
+            <div data-aos="zoom-in-up" data-aos-mirror="true" class="col-12 col-md-3">
+                <div class="cardbk mx-auto">
+                    <div class="player">
+                        <span id="deth">DECEASED</span>
+                        <h1><%= data.statewise[0].deaths %></h1>
+                        <p id="delta-dsc">[+<%= data.statewise[0].deltadeaths %>]</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,6 +84,7 @@
         <div class="text-center">
             <h2>Statewise Tracker</h2>
             <p id="info">Compiled from State Govt. numbers as published by MoHFW</p>
+            <p id="info">Click on states to get districtwise data.</p>
         </div>
           <table data-aos="zoom-in-up"class="plate mx-auto" align="center">
               <tr>
@@ -88,7 +98,7 @@
                <% var state = data.statewise[i]; %>
                 <tr>
                     <% if(state.state=='State Unassigned'){ %>
-                        <td id="state"><a href="/state/<%= state.state %>">These cases are being reassigned to states by MoHfW</a></td>
+                        <td id="state"><a href="/state/<%= state.state %>">These cases are being reassigned to states by MoHFW</a></td>
                     <% }else{ %>
                         <td id="state"><a href="/state/<%= state.state %>"><%= state.state %></a></td>
                     <% } %>

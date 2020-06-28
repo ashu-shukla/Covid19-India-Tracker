@@ -1,16 +1,16 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Karla', sans-serif;
     position: relative; 
-    color: rgb(17, 17, 17);
+    color: rgb(43, 43, 43);
     background-color: rgb(255, 255, 255);
     margin-top: 2rem;
 }
 h1{
     font-weight: 700;
 }h2{
-    font-weight: 600;
+    font-weight: 400;
 }
 a{
     text-decoration: none;
@@ -75,7 +75,7 @@ a:hover{
     font-size: .8rem;
     color: rgb(108, 109, 109);
 }#crowd{
-    font-weight: 800;
+    font-weight: 700;
 }
 .badge-danger{
     border-radius: 3px;
@@ -96,15 +96,46 @@ a:hover{
     border-radius: 15px;
     justify-content: center;
 }
+.cardbk{
+    position: relative;
+    width: 18rem;
+    min-height: 9rem;
+    box-shadow: 5px 15px 35px 3px rgba(50, 88, 130, 0.32);
+    border-radius: 15px;
+    position: relative;
+    z-index: 0;
+    margin: .5rem;
+}
+.cardcon{
+    background: linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%);
+}
+.cardact{
+    background: linear-gradient(315deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+.cardrec{
+    background: linear-gradient(210deg, #74EBD5 0%, #f7e8ad 100%);
+}
 .player {
-    background:rgb(255, 255, 255);
-    width: 14rem;
+    position: absolute;
+    right: 0;
+    background:rgba(255, 255, 255, 0.3);
+    width: 18rem;
     min-height: 11.25rem;
     box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32);
     border-radius: 15px;
     padding: 11px;
     margin: .5rem;
 }
+.playerstate{
+    background:rgba(255, 255, 255);
+    width: 18rem;
+    min-height: 11.25rem;
+    box-shadow: 5px 15px 35px 5px rgba(50, 88, 130, 0.32);
+    border-radius: 15px;
+    padding: 11px;
+    margin: .5rem;
+}
+
 
   table {
     border-collapse: separate;
@@ -113,24 +144,31 @@ a:hover{
 }
  td {
     border: 0px solid white;
-    background-color: rgba(50, 88, 130, 0.32);
+    background-color: rgba(50, 87, 130, 0.3);
     border-radius: 10px;
     -moz-border-radius: 5px;
     padding: 5px;
     margin: 5px;
     word-wrap: break-word;
-    font-weight: 600;
+    font-weight: 700;
 }
 tr:hover {
-    background-color: rgb(95, 95, 95); 
+    background-color: rgba(95, 95, 95, 0.5); 
 }
 @media only screen and (min-width: 320px) {
+    .headimg {
+        display: none;
+    }
     .player {
-        width: 9.7rem;
-        min-height: 5rem;
+        width: 14rem;
+        min-height: 7rem;
+    }
+    .playerstate {
+        width: 9rem;
+        min-height: 7rem;
     }
     #head{
-        font-size: 2rem;
+        font-size: 3rem;
     }
     table{
         width: 100%;
@@ -153,8 +191,15 @@ tr:hover {
 
   }
   @media only screen and (min-width: 768px) {
-    .player {
+    .cardbk{
         width: 10rem;
+    }
+    h1{
+        font-size: 1.52rem;
+    }
+        
+    .player {
+        width: 7rem;
         min-height: 5rem;
     }
     #head{
@@ -171,9 +216,15 @@ tr:hover {
 
   }
   @media only screen and (min-width: 992px) {
+    .headimg {
+        display:block;
+    }
     .player {
         width: 14rem;
         min-height: 5rem;
+    }
+    .cardbk{
+        width:16rem;
     }
     #head{
         font-size: 4rem;
