@@ -55,6 +55,17 @@
 .fa-twitter-square:before {
     content: "\f081";
 }
+.fa-bed:before {
+    content: "\f236";
+}
+.fa-hospital:before {
+    content: "\f0f9";
+}
+.fa-homebtn:before {
+    content: "\f974";
+}
+
+
 
 @font-face {
     font-family: "Font Awesome 5 Brands";

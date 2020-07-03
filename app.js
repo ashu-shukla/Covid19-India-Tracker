@@ -13,7 +13,16 @@ app.get('/',function(req,res){
         if(!error&&response.statusCode==200){
             var parsedData=JSON.parse(body);
             res.render('index',{data: parsedData});
-            console.log('Tracker Displayed!');
+        }
+    });
+});
+
+app.get('/hospitals',function(req,res){ 
+    var url='https://api.rootnet.in/covid19-in/hospitals/beds';
+    request(url,function(error,response,body){
+        if(!error&&response.statusCode==200){
+            var parsedData=JSON.parse(body);
+            res.render('hospitals',{data: parsedData});
         }
     });
 });
@@ -24,9 +33,7 @@ app.get('/state/:state',function(req,res){
     request(url,function(error,response,body){
         if(!error&&response.statusCode==200){
             var parsedData=JSON.parse(body);
-            // console.log(parsedData);
             res.render('state',{data: parsedData, selectedstate: state});
-            console.log('State Displayed!');
         }
     });
 });

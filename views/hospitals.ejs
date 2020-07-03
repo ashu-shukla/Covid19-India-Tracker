@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+  <section id="banner">
+      <div class="container mx-auto align-items-center justify-content-between">
+              <div id="bcol" class="my-auto">
+                  <h1> Hospitals and Beds in India </h1>
+                  <h5>This here is a tabulated data of the number of hospitable beds in our country</h5>
+                  <p>If the pandemic worsens this is the availability of hospitals and beds</p>
+                  <p>Considering that many are not yet compliant to be a covid quarantine center</p>
+              </div>
+          </div>
+        </div>
+  </section>
+  
+<section id="totalcases">
+    <div class="container">
+          <div class="row dropdown">
+            <input type="checkbox" id="dropdown">
+          
+            <label class="dropdown__face" for="dropdown">
+              <div class="dropdown__text">
+                  <% let tp=data.data %>
+                    <span id="total">Total Number Of Hospitals</span>
+                    <h1><%= tp.summary.totalHospitals %></h1>
+                    <span id="total">Total Number Of Beds</span>
+                    <h1><%= tp.summary.totalBeds %></h1>
+              </div>
+              <div class="dropdown__arrow"></div>
+            </label>
+            <ul class="dropdown__items">
+              <li>Urban Hospitals:    <%= tp.summary.urbanHospitals %></li>
+              <li>Beds:               <%= tp.summary.urbanBeds %></li>
+              <li>Rural Hospitals:    <%= tp.summary.ruralHospitals %></li>
+              <li>Beds:               <%= tp.summary.ruralBeds %></li>
+            </ul>
+          </div>
+          
+          <svg id="nun">
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </svg>
+
+  </section>
+  <section id="states"style="z-index: -1;">
+    <div class="container justify-content-center mt-2">
+      <div class="text-center">
+          <h2>Statewise Beds in Hospitals</h2>
+          <p id="info">Official number of hospitals in our country as published by<a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1539877">PIB Delhi</a></p>
+      </div>
+        <table data-aos="zoom-in-up" class="plate mx-auto" align="center">
+            <tr>
+                <th>State</th>
+                <th class="text-center" id="total"><span id="confirm">Hospitals</span><span id="con">Hsptl</span></th>
+                <th class="text-center" id="active"><span id="confirm">Beds</span><span id="con">Beds</span></th>
+            </tr>
+            <% var dist= tp.regional %>
+            <% var num= dist.length %>
+            <% for(var  j = 0 ; j< num; j++){ %>
+              <tr>
+                  <td><%= dist[j].state %></td>
+                  <td class="text-center"> <%= dist[j].totalHospitals %></td>
+                  <td class="text-center"><%= dist[j].totalBeds %></td>
+              </tr>
+           <% } %>
+              
+        </table>
+    </div>
+</section>
+ 
+  <section id="about">
+    <div class="text-center mt-4" data-aos="zoom-in-up">
+        <a class="ftco" href="/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-caret-left"></i></i> Go Back!</button></a>
+      </div>
+      <div class="container text-center mt-4">
+          <div data-aos="zoom-in-up">
+            <a class="ftco" href="https://api.covid19india.org/"><button type="button" id="crowd" class="btn btn-outline-dark"><i class="fas fa-database"></i></i> CROWDSOURCED PATIENT DATABASE</button></a>
+          </div>
+          <a class="ftco" href="https://www.facebook.com/ashutoshshukla8"><i class="fab fa-facebook"></i></a>
+          <a class="ftco" href="https://www.instagram.com/ashutoshshukla__/"><i class="fab fa-instagram"></i></a>
+          <a class="ftco" href="https://twitter.com/ashu_shukla_"><i class="fab fa-twitter"></i></a>
+      </div>
+  </section>
+  <%- include('partials/footer') %>
